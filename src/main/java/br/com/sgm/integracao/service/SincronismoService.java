@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,8 +16,6 @@ import br.com.sgm.integracao.repository.ValorRegiaoRepository;
 @Service
 public class SincronismoService {
 	
-	private static final Log log = LogFactory.getLog(SincronismoService.class);
-
 	private final SerieRepository serieRepository;
 	
 	private final ValorRegiaoRepository valorRegiaoRepository;
@@ -36,17 +32,11 @@ public class SincronismoService {
 	}
 	
 	public void sincronizarDadosIpea() {
-		try {
-			valorRegiaoRepository.deleteAll();
-			serieRepository.deleteAll();
-			
-			List<Serie> series = sincronizarSeries();		
-			sincronizarValoresPorRegiao(series);			
-		} catch (Exception e) {
-			log.error(e);
-			log.info(e);
-			e.printStackTrace();
-		}
+		valorRegiaoRepository.deleteAll();
+		serieRepository.deleteAll();
+		
+		List<Serie> series = sincronizarSeries();		
+		sincronizarValoresPorRegiao(series);			
 	}
 
 	private void sincronizarValoresPorRegiao(List<Serie> series) {		
