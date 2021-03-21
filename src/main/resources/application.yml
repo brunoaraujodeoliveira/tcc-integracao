@@ -11,7 +11,7 @@ spring:
     ##url: jdbc:postgresql://localhost:5432/
     ##username: postgres
     ##password: postgres
-    url: jdbc:postgres://ec2-54-166-242-77.compute-1.amazonaws.com:5432/d488m40vk4mlb9
+    url: jdbc:postgresql://ec2-54-166-242-77.compute-1.amazonaws.com:5432/d488m40vk4mlb9
     username: cfvhtpknlvtkkv
     password: 7ae52abc843d579579dee6d91b6307700e80b59fa2afdbe5c2a4c5b338a80a50
   jpa:
@@ -20,7 +20,7 @@ spring:
     show-sql: false
     database: postgresql
     open-in-view: false
-    generate-ddl: true
+    generate-ddl: false
     
 eureka:
   instance:
