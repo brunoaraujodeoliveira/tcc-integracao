@@ -6,13 +6,13 @@ server:
 spring:
   application:
     name: integracao
-#  datasource:
-#    driver-class-name: org.postgresql.Driver
-    ##url: jdbc:postgresql://localhost:5432/
-    ##username: postgres
-    ##password: postgres
-#    url: jdbc:postgresql://ec2-54-166-242-77.compute-1.amazonaws.com:5432/d488m40vk4mlb9?user=cfvhtpknlvtkkv
-#    password: 7ae52abc843d579579dee6d91b6307700e80b59fa2afdbe5c2a4c5b338a80a50
+  datasource:
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/
+#    username: postgres
+#    password: postgres
+    url: jdbc:postgresql://ec2-54-166-242-77.compute-1.amazonaws.com:5432/d488m40vk4mlb9?user=cfvhtpknlvtkkv
+    password: 7ae52abc843d579579dee6d91b6307700e80b59fa2afdbe5c2a4c5b338a80a50
   jpa:
     hibernate:
       ddl-auto: update
@@ -26,7 +26,7 @@ eureka:
     hostname: localhost
   client:
     service-url:
-      ##defaultZone: http://localhost:8761/registry/eureka
+#      defaultZone: http://localhost:8761/registry/eureka
       defaultZone: http://tcc-discovery.herokuapp.com/registry/eureka/
     
 integracao:
