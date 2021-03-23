@@ -14,7 +14,7 @@ public class CorsMappingConfig {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/**").allowedOrigins("tcc-gateway.herokuapp.com");
+				registry.addMapping("/**").allowedOrigins("tcc-gsm.herokuapp.com");
 			}
 		};
 	}
